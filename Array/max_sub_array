@@ -1,0 +1,15 @@
+int maxSubArray(vector<int>& nums) {
+        
+        int curr = 0;
+        int MaxTillNow =nums[0];
+        
+        for(int i=0;i<nums.size();i++)
+        {
+            curr += nums[i];
+            MaxTillNow = max(MaxTillNow,curr);
+            
+            if(curr<0)
+                curr=0;
+        }
+        return MaxTillNow;
+    }
